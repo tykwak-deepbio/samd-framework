@@ -1,0 +1,105 @@
+# Risk Management Report (RMR) - SaMD Engineering Framework
+
+> **Document ID**: `FRAMEWORK-RMR-001`  
+> **System Under Design**: Antigravity SaMD Multi-Agent Engineering Framework (Core System)  
+> **Applicable Standards**: ISO 14971:2019 Clauses 8 & 9, ISO/TR 24971:2020, IEC 62304:2006+AMD1:2015 Clause 7  
+> **Lifecycle Milestone**: Post-Software Architectural Design & Post-Architecture Risk Management Verification  
+> **Revision**: 1.0.0 | **Effective Date**: 2026-10-28  
+> **Reviewer**: Lead Regulatory & SaMD Software Quality Auditor  
+> **Status**: Approved (Overall Residual Risk Acceptable / ALARP Confirmed)  
+
+---
+
+## 1. Document Control & Sign-Off
+
+| Role | Name | Title / Organization | Signature / Approval | Date |
+| :--- | :--- | :--- | :--- | :--- |
+| **Risk Lead** | Antigravity Risk Lead | SaMD Quality & Safety Engineering | Approved (Cryptographic HMAC) | 2026-10-28 |
+| **Lead Architect** | Antigravity Architecture Lead | Medical Device Software Architecture | Approved (Cryptographic HMAC) | 2026-10-28 |
+| **Independent Auditor** | Lead SaMD Regulatory Auditor | Independent Software Quality Assurance | Approved (Audit Report VERIF-008) | 2026-10-28 |
+
+---
+
+## 2. Risk Management Lifecycle Execution Summary
+
+The risk management activities for the Antigravity SaMD Multi-Agent Engineering Framework have been conducted in accordance with **ISO 14971:2019** and **IEC 62304:2006+AMD1:2015 Clause 7** across all engineering phases:
+
+1. **Preliminary Hazard Analysis (PHA)**:
+   - Evaluated 100% of software requirements (**44 / 44 `FR-*` specifications**) in [`docs/risks/FRAMEWORK_PHA_MATRIX.md`](file:///home/tykwak/workspace/samd-framework/docs/risks/FRAMEWORK_PHA_MATRIX.md).
+   - Identified 15 system-level clinical and process hazards (`RSK-FW-001` through `RSK-FW-015`).
+2. **Software Failure Modes and Effects Analysis (SW-FMEA)**:
+   - Evaluated 100% of software architectural components and interfaces (**11 / 11 `ARCH-FW-*` units**, 16 failure modes) in [`docs/risks/FRAMEWORK_SW_FMEA.md`](file:///home/tykwak/workspace/samd-framework/docs/risks/FRAMEWORK_SW_FMEA.md).
+   - Traced all potential software contributions to hazardous situations directly down to Software Detailed Design units (`DDS-FW-001` through `DDS-FW-011`).
+3. **Risk Control Measures (RCMs)**:
+   - Formulated 15 formal Risk Control Measures (`RCM-FW-001` through `RCM-FW-015`) allocating inherent safety-by-design interlocks.
+   - Evaluated potential new hazards arising from each control measure under ISO 14971 Clause 7.3 and IEC 62304 Clause 7.2.2 across all 15 risk documents.
+4. **Implementation and Verification Flow-Down**:
+   - 100% of RCMs are allocated to Detailed Design units (`DDS-FW-001` ~ `DDS-FW-011`) with explicit safety invariants.
+   - 100% of RCMs are verified through objective automated test specifications (`TC-FR-*`).
+
+---
+
+## 3. Residual Risk Profile & Evaluation Matrix
+
+### 3.1 Pre-Mitigation vs Post-Mitigation Risk Distribution
+
+| Severity \ Probability | P1 (Extremely Unlikely) | P2 (Remote) | P3 (Occasional) | P4 (Frequent) |
+| :--- | :---: | :---: | :---: | :---: |
+| **S4 (Critical / Diagnostic Harm)** | Post: 7 (`RSK-001,003,004,008,010,013,014`) | Pre: 0 | Pre: 5 (`RSK-001,003,004,008,013`) | Pre: 2 (`RSK-010,014`) |
+| **S3 (Serious / Compliance Failure)**| Post: 4 (`RSK-002,005,011,015`) | Pre: 0 | Pre: 5 (`RSK-002,005,007,011,015`) | Pre: 2 (`RSK-006,009`) |
+| **S2 (Minor / Workflow Delay)**     | Post: 4 (`RSK-006,007,009,012`) | Pre: 0 | Pre: 1 (`RSK-012`) | Pre: 0 |
+| **S1 (Negligible)**                  | Post: 0 | Pre: 0 | Pre: 0 | Pre: 0 |
+
+- **Initial Unacceptable / High Risk Items**: **15 / 15 (100%)**
+- **Residual Unacceptable Risk Items**: **0 / 15 (0%)**
+- **Residual Risk Broadly Acceptable**: **8 items** (`S2xP1`, `S3xP1`)
+- **Residual Risk Acceptable (ALARP)**: **7 items** (`S4xP1`, where critical clinical severity remains inherent to medical software, but probability is reduced to extremely unlikely via software interlocks, cryptographic bounds, and HITL gate reviews).
+
+---
+
+## 4. Overall Residual Risk Evaluation (ISO 14971:2019 Clause 8)
+
+Under **ISO 14971:2019 Clause 8**, the overall residual risk of the entire system must be evaluated:
+1. **Cumulative & Synergistic Effect of Residual Risks**:
+   - The 15 individual residual risks were analyzed for synergistic combinations. For example, the interaction between LLM hallucination (`RSK-FW-004`), data drift (`RSK-FW-010`), and usability warning display (`RSK-FW-012`) is bounded by independent, defense-in-depth layers:
+     - Automated PubMed citation cross-verification (`DDS-FW-009`);
+     - Statistical drift alert and fail-safe raw viewer fallback (`DDS-FW-008`);
+     - High-contrast persistent status banner (`DDS-FW-007`);
+     - Mandatory human pathologist sign-off at Tier 1 gates (`DDS-FW-002`).
+   - Consequently, residual risks do not compound to create unmitigated failure states.
+2. **Evaluation of New Hazards Generated by Controls (Clause 7.3)**:
+   - All 15 risk files specifically document the evaluation of secondary hazards (e.g. timeout starvation from HITL gates, parser crash on malformed input, sandbox log blocking).
+   - In all instances, secondary mitigations (asynchronous state serialization, fail-closed assertions, dedicated quota volumes) prevent hazardous escalation.
+3. **Acceptability Conclusion**:
+   - The overall residual risk of the Antigravity SaMD Multi-Agent Engineering Framework is **Acceptable** according to the Risk Management Plan criteria.
+
+---
+
+## 5. Clinical Benefit-Risk Analysis (BRA)
+
+Under **ISO 14971:2019 Clause 8.3**:
+1. **Clinical & Regulatory Benefits**:
+   - Accelerates the authoring of 100% compliant, audit-ready Design History Files (DHF) under ISO 13485 and IEC 62304.
+   - Eliminates human transcription errors, dangling requirements, and unverified safety controls through automated bidirectional graph validation.
+   - Enforces GMLP, PCCP, and Premarket Cybersecurity baselines before any clinical deployment.
+2. **Residual Risks**:
+   - Handled via deterministic software assertions, cryptographic hashing, and mandatory human-in-the-loop oversight.
+3. **Benefit-Risk Ratio**:
+   - The substantial safety, quality, and regulatory benefits decisively outweigh the minimal residual risks.
+
+---
+
+## 6. Production & Post-Production Monitoring Plan (ISO 14971 Cl 10 & IEC 62304 Cl 6/9)
+
+1. **Automated Vulnerability Monitoring**:
+   - Continuous ingestion of NVD CVE feeds with automated SLA notifications (30-day mitigation, 60-day patch release for CVSS $\ge 9.0$).
+2. **Clinical Data & Concept Drift Surveillance**:
+   - Real-time KS-test and PSI monitoring over clinical input distributions.
+3. **CAPA & Problem Resolution Integration**:
+   - Software anomalies tracked via state machine (`docs/detailed_design/DDS-FW-011.md`), prohibiting Gate 10 release on unresolved Severity 1 or 2 defects.
+
+---
+
+## 7. Final Risk Management Conclusion
+
+The Risk Management Lifecycle for the Antigravity SaMD Multi-Agent Engineering Framework has been fully executed in compliance with **ISO 14971:2019** and **IEC 62304:2006+AMD1:2015**. All known hazards and architectural failure modes have been identified, mitigated, verified, and found acceptable. The framework is approved for deployment into Phase 8 (Software Implementation & Unit Verification).

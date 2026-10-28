@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "project_name": "samd-project-template",
+  "software_safety_class": "Class B",
+  "current_phase": 1,
+  "current_phase_name": "Phase 1: Intended Use, User Needs & Concept Definition",
+  "last_updated": "2026-10-28T00:00:00Z",
+  "audit_trail_path": "dhf/audit_trail.log",
+  "gates": {
+    "GATE-01": {
+      "name": "Intended Use & User Needs Approval",
+      "target_dhf": ["DHF-01"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-02", "GATE-03", "GATE-04", "GATE-05", "GATE-06", "GATE-07", "GATE-08", "GATE-09", "GATE-10", "GATE-11", "GATE-12"]
+    },
+    "GATE-02": {
+      "name": "Clinical SOTA Baseline Approval",
+      "target_dhf": ["DHF-02"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-04", "GATE-09"]
+    },
+    "GATE-03": {
+      "name": "Regulatory Strategy & Classification Profile Approval",
+      "target_dhf": ["DHF-03"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-04", "GATE-05", "GATE-07", "GATE-10"]
+    },
+    "GATE-04": {
+      "name": "Software Requirements Specification (SRS) & Usability Sign-off",
+      "target_dhf": ["DHF-04", "DHF-12"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-05", "GATE-06", "GATE-07", "GATE-08", "GATE-09", "GATE-10"]
+    },
+    "GATE-05": {
+      "name": "Initial Risk Analysis (PHA/FMEA) Sign-off",
+      "target_dhf": ["DHF-05A", "DHF-05B"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-06", "GATE-07", "GATE-08", "GATE-09", "GATE-10"]
+    },
+    "GATE-06": {
+      "name": "Cybersecurity Architecture & Threat Model Approval",
+      "target_dhf": ["DHF-06"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-07", "GATE-08", "GATE-09", "GATE-10"]
+    },
+    "GATE-07": {
+      "name": "Software Architectural Design Sign-off & Safety Segregation",
+      "target_dhf": ["DHF-07"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-08", "GATE-09", "GATE-10"]
+    },
+    "GATE-08": {
+      "name": "Software Detailed Design (DDS) & Unit Test Plan Approval",
+      "target_dhf": ["DHF-08"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-09", "GATE-10"]
+    },
+    "GATE-09": {
+      "name": "Implementation, Static Analysis & Unit Verification Clearance",
+      "target_dhf": ["DHF-09"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-10"]
+    },
+    "GATE-10": {
+      "name": "System Integration, V&V Testing, Clinical Evaluation (CER) & Usability Approval",
+      "target_dhf": ["DHF-09", "DHF-10", "DHF-11", "DHF-15"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-11", "GATE-12"]
+    },
+    "GATE-11": {
+      "name": "Design Transfer, Labeling (IFU) Sign-off & Regulatory Clearance Approval",
+      "target_dhf": ["DHF-00", "DHF-11", "DHF-14"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": ["GATE-12"]
+    },
+    "GATE-12": {
+      "name": "Post-Market Maintenance, Anomaly Resolution & Safety Update Sign-off",
+      "target_dhf": ["DHF-13", "DHF-05C"],
+      "status": "PENDING",
+      "approved_by": null,
+      "approved_at": null,
+      "sign_off_hash": null,
+      "invalidates_on_change": []
+    }
+  }
+}

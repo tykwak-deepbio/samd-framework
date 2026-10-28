@@ -1,0 +1,16 @@
+{
+  "DHF-00-Design-and-Development-Plan-DDP.md": "d48749afa2e2fe5304da033b0697f32ce1db7819e6af42923a14ce866006c14d",
+  "DHF-01-Intended-Use-and-URD.md": "aef0d9ddc1377bf0c3401812098baedea25b4a8c47480557737170077e16e683",
+  "DHF-02-Clinical-Literature-and-SOTA.md": "c16cf70e93486cc0c4f112e9af5d5dd8e6ecea4d19a89f82c0b1147fd9869805",
+  "DHF-03-Regulatory-Strategy-and-Clearance-Profile.md": "ceb8d2d55770f17ae29a90079130cafe6a139e20977a147f51086434402bde64",
+  "DHF-04-Software-Requirements-Specification-SRS.md": "ebe24edd1472e5ad3e949e324909edb1271df38caa4d8d721249bc41b6eaa748",
+  "DHF-05A-Risk-Management-Plan-RMP.md": "2acba0b36268c100d5bbd8f8af0fdeb2014d894f733cc81df2646d9b831ba056",
+  "DHF-05B-Hazard-Analysis-and-FMEA-Matrix.md": "2af7e7053ffcca5fe08a3e0d1927dd7a1664bcc30525b3dccf05245469129a4c",
+  "DHF-05C-Risk-Management-Report-RMR.md": "7ad0a868065bf2b54646bd7e14d58914ca33e093567767524616cc841391e0c4",
+  "DHF-06-Cybersecurity-Threat-Model-and-SBOM.md": "bd3b0a5237db72e601a7b08b7211a598b0777fe35cb094ef61305c6bb4117f15",
+  "DHF-07-Software-Architectural-Design-Specification-SDS.md": "25e3edba4c9063fc12b9aff6733735a7cbaaa7a726109bdf3bb033f0f26478fa",
+  "DHF-08-Software-Detailed-Design-Specification-DDS.md": "c3f889a1b7ec3108612562b9bb206bd5c09b879fadc3e572c756dc49a112b4b6",
+  "DHF-09-Software-Verification-and-Validation-Report.md": "0da7370134e58c0cdf1c024fe7119baa2a26500e748bc5c3923e26c87a6c47f4",
+  "DHF-10-Traceability-Matrix-RTM.md": "59f20658bd2e386f2e42e327c25a205740f80a76b1b6df13396aaae644c92d45",
+  "DHF-11-DHF-Index-and-Quality-Audit-Report.md": "a20cdb406dfe6df22f324ae0b0ecfa024f235ae9ec946136ed99961ca98c22a4"
+}

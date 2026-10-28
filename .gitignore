@@ -1,0 +1,17 @@
+# Cybersecurity & Secret Hygiene (ISO 27001 / Rule 3)
+.audit_secret
+*.key
+*.secret
+
+# Python Bytecode and Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local Environment and OS
+.env
+.DS_Store
+*.log
